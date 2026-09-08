@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ldeep2bloodhound"
+version = "0.1.0"
+description = "Convert ldeep LDAP dumps into BloodHound CE ingestion zips"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [
+    { name = "firekwinox", email = "firekwinox@proton.me" },
+]
+keywords = ["ldeep", "bloodhound", "active-directory", "ldap", "pentest"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+]
+dependencies = [
+    "ldeep>=2.0.3",
+]
+
+[project.scripts]
+ldeep2bloodhound = "ldeep2bloodhound.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
